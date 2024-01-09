@@ -1,4 +1,6 @@
 DROP DATABASE IF EXISTS market_db; -- 만약 market_db가 존재하면 우선 삭제한다.
+GRANT ALL PRIVILEGES ON market_db.* TO 'NAIMJAE'@'%'
+
 CREATE DATABASE market_db;
 
 USE market_db;
