@@ -25,7 +25,7 @@ CREATE TABLE `User` (
 	`leaveDate` DATETIME 
 );
 CREATE TABLE `Article` (
-	`no`			INT PRIMARY KEY,
+	`no`			INT PRIMARY KEY AUTO_INCREMENT,
 	`parent`		INT DEFAULT 0,
 	`comment`	INT DEFAULT 0,
 	`cate`		VARCHAR(20) DEFAULT 'free',
@@ -46,8 +46,10 @@ CREATE TABLE `File` (
 	`download`	INT DEFAULT 0,
 	`rdate`		DATETIME NOT NULL,
 	FOREIGN KEY(`ano`) REFERENCES `Article` (`no`)
-);terms
+);
 CREATE TABLE `Terms` (
 	`terms`		TEXT,
 	`privacy`	TEXT
 );
+INSERT INTO `Article` (`title`,`content`,`writer`,`regip`,`rdate`)
+SELECT `title`,`content`,`writer`,`regip`,`rdate` FROM `Article`;
