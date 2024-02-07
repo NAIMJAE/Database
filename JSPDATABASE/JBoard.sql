@@ -6,7 +6,7 @@ CREATE DATABASE `Jboard`;
 USE `jboard`;
 
 
-GRANT ALL PRIVILEGES ON jboard.* TO 'naimjae'@'%';
+GRANT ALL PRIVILEGES ON jboard.* TO 'NAIMJAE'@'%';
 FLUSH PRIVILEGES;
 
 CREATE TABLE `User` (
@@ -25,7 +25,11 @@ CREATE TABLE `User` (
 	`leaveDate` DATETIME 
 );
 CREATE TABLE `Article` (
+<<<<<<< HEAD
 	`no`			INT PRIMARY KEY AUTO_INCREMENT,
+=======
+	`no`			INT PRIMARY KEY auto_increment,
+>>>>>>> ffc482c6db20025723f4b1b46f9f5311f65c021f
 	`parent`		INT DEFAULT 0,
 	`comment`	INT DEFAULT 0,
 	`cate`		VARCHAR(20) DEFAULT 'free',
@@ -39,7 +43,7 @@ CREATE TABLE `Article` (
 	FOREIGN KEY(`writer`) REFERENCES `User` (`uid`)
 );
 CREATE TABLE `File` (
-	`fno`			INT AUTO_INCREMENT PRIMARY KEY,
+	`fno`			INT PRIMARY KEY,
 	`ano`			INT NOT NULL,
 	`oName`		VARCHAR(100) NOT NULL,
 	`sName`		VARCHAR(100) NOT NULL,
